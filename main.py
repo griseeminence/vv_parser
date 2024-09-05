@@ -11,6 +11,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 }
 
+
 class Parser:
     @staticmethod
     def collect_links(start_page=1, end_page=66):
