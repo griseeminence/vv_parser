@@ -1,6 +1,3 @@
-def main():
-    pass
+import pytest
+from main import Parser
 
-
-if __name__ == '__main__':
-    main()

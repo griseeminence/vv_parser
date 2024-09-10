@@ -15,6 +15,7 @@ headers = {
 class Parser:
     @staticmethod
     def collect_links(start_page=1, end_page=66):
+        os.mkdir(f'data/')
         recipes_dict = {}
         page_counter = start_page
         print(f'Принято страниц на обработку: {end_page - start_page}')
@@ -23,7 +24,7 @@ class Parser:
 
             url_pages = f'https://vkusvill.ru/media/recipes/?utm_source=site&utm_medium=main&utm_campaign=content&PAGEN_1={page}'
             req = requests.get(url_pages, headers=headers)
-            folder_name = f"data/recipe_pages/"
+            folder_name = f'data/recipe_pages/'
 
             if not os.path.exists(folder_name):
                 os.mkdir(folder_name)
@@ -48,7 +49,7 @@ class Parser:
         with open("data/recipe_pages/result_recipe_pages.json", "a", encoding="utf-8") as file:
             json.dump(recipes_dict, file, indent=4, ensure_ascii=False)
             print(f'JSON со списком всех ссылок сохранён!')
-        return Parser.parse_recipes(recipes_dict)
+        return recipes_dict
 
     @staticmethod
     def parse_recipes(recipes_dict):
@@ -91,7 +92,15 @@ class Parser:
         with open("data/result_data.json", "a", encoding="utf-8") as file:
             json.dump(result, file, indent=4, ensure_ascii=False)
             print(f'JSON с данными о рецептах сохранён!')
+        return result
+
+    @staticmethod
+    def start_parser(start, end):
+        recipes_dict = Parser.collect_links(start, end)
+        return Parser.parse_recipes(recipes_dict)
 
 
 if __name__ == "__main__":
-    Parser.collect_links(1, 2)
+    page_start = int(input('Укажите начальную страницу для парсинга:\n'))
+    page_end = int(input('Укажите конечную страницу для парсинга:\n'))
+    Parser.start_parser(page_start, page_end)
