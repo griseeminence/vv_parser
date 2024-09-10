@@ -26,5 +26,5 @@ being blocked.
 - beautifulsoup4
 - lxml
 - pytest
-- pytest-mock
+- unittest.mock
 - requests
