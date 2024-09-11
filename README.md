@@ -23,8 +23,10 @@ being blocked.
 ### There is the main list:
 (Full list in requirements.txt)
 
+- requests
 - beautifulsoup4
+- json
 - lxml
 - pytest
 - unittest.mock
-- requests
+- shutil
