@@ -1,10 +1,11 @@
 import json
 import os
 import shutil
-
-import pytest
-from main import Parser
 import unittest.mock as mock
+import pytest
+
+from parser.core import Parser
+
 
 
 @pytest.fixture(autouse=True)

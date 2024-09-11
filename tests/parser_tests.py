@@ -2,7 +2,7 @@ import pytest
 import json
 import unittest.mock as mock
 
-from main import Parser
+from parser.core import Parser
 
 
 # TODO: Определить в класс, вывести doc строку в коммент к классу (про autouse)
