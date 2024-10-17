@@ -7,7 +7,6 @@ import pytest
 from parser.core import Parser
 
 
-
 @pytest.fixture(autouse=True)
 def mock_request():
     with mock.patch('requests.get') as mock_request:

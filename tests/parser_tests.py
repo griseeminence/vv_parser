@@ -5,10 +5,6 @@ import unittest.mock as mock
 from parser.core import Parser
 
 
-# TODO: Определить в класс, вывести doc строку в коммент к классу (про autouse)
-# TODO: Проверить фикстуры, убрать дубли кода
-# TODO: Убрать принты
-
 def test_correct_request_bs4(collect_links_expected):
     """
     Autouse pytest.fixture "mock request" for request.text and request.status_code
